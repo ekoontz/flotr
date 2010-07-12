@@ -46,10 +46,12 @@
 				var d3 = [];
 				var d4 = [];
 				var d5 = [];
+
+			var orange_exponent = 5.5;
 				
 				for(var i = 0; i <= 10; i += 0.1){
 					d1.push([i, 4 + Math.pow(i,1.5)]);
-					d2.push([i, Math.pow(i,3)]);
+					d2.push([i, Math.pow(i,orange_exponent)]);
 					d3.push([i, i*5+3*Math.sin(i*4)]);
 					d4.push([i, i]);
 					if( i.toFixed(1)%1 == 0 ){
@@ -63,7 +65,7 @@
 				var f = Flotr.draw(
 					$('container'),[ 
 						{data:d1, label:'y = 4 + x^(1.5)', lines:{fill:true}}, 
-						{data:d2, label:'y = x^3'}, 
+						{data:d2, label:'y = x^('+orange_exponent+')'}, 
 						{data:d3, label:'y = 5x + 3sin(4x)'}, 
 						{data:d4, label:'y = x'},
 						{data:d5, label:'y = 2x', lines: {show: true}, points: {show: true}}
