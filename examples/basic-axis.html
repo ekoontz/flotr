@@ -46,9 +46,16 @@
 				var d3 = [];
 				var d4 = [];
 				var d5 = [];
+				var d6 = [];
 
 			var orange_exponent = Math.PI;
 				
+
+			d6.push([2,10]);
+			d6.push([3,15]);
+			d6.push([4,7]);
+			d6.push([5,17]);
+
 				for(var i = 0; i <= 10; i += 0.1){
 					d1.push([i, 4 + Math.pow(i,1.5)]);
 					d2.push([i, Math.pow(i,orange_exponent)]);
@@ -58,7 +65,13 @@
 						d5.push([i, 2*i]);
 					}
 				}
-						    
+				i += 0.1;
+				d5.push([i,25]);
+
+				i += 0.1;
+				d5.push([i,3]);
+
+
 				/**
 				 * Draw the graph.
 				 */
@@ -68,13 +81,14 @@
 						{data:d2, label:'y = x^('+orange_exponent+')'}, 
 						{data:d3, label:'y = 5x + 3sin(4x)'}, 
 						{data:d4, label:'y = x'},
-						{data:d5, label:'y = 2x', lines: {show: true}, points: {show: true}}
+						{data:d5, label:'y = 2x', lines: {show: true}, points: {show: true}},
+						{data:d6, label:'my data', lines: {show: true}, points: {show: true}}
 					],{
 						xaxis:{
 							noTicks: 7,	// Display 7 ticks.
 							tickFormatter: function(n){ return '('+n+')'; }, // => displays tick values between brackets.
 							min: 1,		// => part of the series is not displayed.
-							max: 7.5	// => part of the series is not displayed.
+							max: 10.5	// => part of the series is not displayed.
 						},
 						yaxis:{
 							ticks: [[ 0, "Lower"], 10, 20, 30, [40, "Upper"]],
@@ -86,8 +100,8 @@
 						legend: {
               position: 'nw'
             },
-            title: 'Basic Axis example',
-            subtitle: 'This is a subtitle'
+            title: 'Oil Prices',
+            subtitle: 'Peak oil stuffs'
 				});
 			});
 		</script>
